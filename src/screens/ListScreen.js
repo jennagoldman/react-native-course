@@ -1,9 +1,21 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, FlatList } from 'react-native';
 
 const ListScreen = () => {
+  const friends = [
+    { name: 'Dannie' },
+    { name: 'Chelsea' },
+    { name: 'Britta' },
+    { name: 'Karen' },
+  ];
+
   return (
-    <Text>List Screen</Text>
+    <FlatList 
+      data={friends}
+      renderItem={({ item }) => {
+        return <Text>{item.name}</Text>
+      }} 
+    />
   );
 };
 
